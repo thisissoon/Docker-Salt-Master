@@ -1,0 +1,14 @@
+#
+# Default Salt Master Configuration
+#
+# This will live in /etc/salt/master.d/master To change it you can
+# rebuild the docker image with the updated configuration or mount
+# /etc/salt/minion.d on your host
+#
+# docker run -d -v /salt/master.d:/etc/salt/master.d soon/salt-master
+#
+
+# Automatically Accept Minion Connections
+auto_accept: True
+
+# vim: set ft=yaml.jinja:
