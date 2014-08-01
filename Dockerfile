@@ -8,17 +8,10 @@ MAINTAINER SOON_ <dorks@thisissoon.com>
 # Update System
 RUN apt-get update && apt-get upgrade -y -o DPkg::Options::=--force-confold
 
-# Dependencies
+# Salt BootStrap
 
-RUN apt-get install -y software-properties-common
-
-# Add the Salt Stack Repository
-
-RUN add-apt-repository -y ppa:saltstack/salt
-
-# Install Salt-Master and Salt Syndic
-
-RUN apt-get install -y salt-master salt-syndic
+ADD https://bootstrap.saltstack.com install_salt.sh
+RUN sudo sh install_salt.sh git v2014.7
 
 # Volumes
 
