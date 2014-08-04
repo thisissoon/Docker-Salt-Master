@@ -9,9 +9,13 @@ MAINTAINER SOON_ <dorks@thisissoon.com>
 RUN apt-get update && apt-get upgrade -y -o DPkg::Options::=--force-confold
 
 # Salt BootStrap
+# See: https://github.com/saltstack/salt-bootstrap/issues/394
 
-ADD https://bootstrap.saltstack.com install_salt.sh
-RUN sudo sh install_salt.sh git v2014.7
+ADD https://bootstrap.saltstack.com /usr/local/bin/install_salt.sh
+RUN chmod +x /usr/local/bin/install_salt.sh
+ADD relay.sh /usr/local/bin/relay.sh
+RUN chmod +x /usr/local/bin/relay.sh
+RUN relay.sh install_salt.sh -M -N git develop
 
 # Volumes
 
