@@ -58,3 +58,18 @@ The following ports are exposed:
  * `4506`
 
 These ports allow minions to communicate with the Salt Master.
+
+## Running Salt Commands
+
+Docker will hopefully soon ship with a `docker exec` command which will allow you to run commands in a running container.
+See this pull request: https://github.com/docker/docker/pull/7409.
+
+But until then you will need to run another docker container which runs a program called `nsenter` which allows
+you to connect to running containers. Follow the instructions here: https://github.com/jpetazzo/nsenter
+
+Once installed run:
+
+    $ CONTAINER_ID=$(docker run -d soon/salt-master)
+    $ docker-enter $CONTAINER_ID
+    $ root@CONTAINER_ID:~# salt '*' test.ping
+    $ root@CONTAINER_ID:~# salt '*' grains.items
