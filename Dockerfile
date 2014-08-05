@@ -19,11 +19,7 @@ RUN relay.sh install_salt.sh -M -N git develop
 
 # Volumes
 
-VOLUME ['/etc/salt/master.d', '/srv/salt']
-
-# Add confiugruation file
-
-ADD master /etc/salt/master.d/master
+VOLUME ['/etc/salt/pki', '/var/cache/salt', '/var/logs/salt', '/etc/salt/master.d', '/srv/salt']
 
 # Add Run File
 
