@@ -16,7 +16,7 @@ RUN apt-get update
 
 # Install Salt
 
-RUN apt-get install -y salt-master salt-syndic
+RUN apt-get install -y salt-master=2014.1.7+ds-1trusty1
 
 # Volumes
 
