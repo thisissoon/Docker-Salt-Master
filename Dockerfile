@@ -10,7 +10,7 @@ RUN apt-get update && apt-get upgrade -y -o DPkg::Options::=--force-confold
 
 # Add PPA
 
-RUN apt-get install -y software-properties-common
+RUN apt-get install -y software-properties-common dmidecode
 RUN add-apt-repository -y ppa:saltstack/salt
 RUN apt-get update
 
