@@ -16,7 +16,7 @@ RUN apt-get update
 
 # Install Salt
 
-RUN apt-get install -y salt-master=2014.1.11+ds-1trusty1
+RUN apt-get install -y salt-master=2014.1.11+ds-2trusty1
 
 # Volumes
 
