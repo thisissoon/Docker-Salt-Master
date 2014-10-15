@@ -7,6 +7,7 @@ MAINTAINER SOON_ <dorks@thisissoon.com>
 
 # Update System
 RUN apt-get update && apt-get upgrade -y -o DPkg::Options::=--force-confold
+RUN apt-get install -y software-properties-common dmidecode
 
 # Install Version @ 2014.7
 # See: https://github.com/saltstack/salt-bootstrap/issues/394
