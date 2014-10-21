@@ -10,4 +10,4 @@ set -e
 LOG_LEVEL=${LOG_LEVEL:-"error"}
 
 # Run Salt as a Deamon
-exec sudo /usr/bin/salt-master --log-level=$LOG_LEVEL
+exec /usr/bin/salt-master --log-level=$LOG_LEVEL
