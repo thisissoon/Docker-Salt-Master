@@ -2,21 +2,21 @@
 # Salt Stack Salt Master Container
 #
 
-FROM ubuntu:14.04
+FROM debian:wheezy
 MAINTAINER SOON_ <dorks@thisissoon.com>
 
-# Update System
-RUN apt-get update && apt-get upgrade -y -o DPkg::Options::=--force-confold
-RUN apt-get install -y software-properties-common dmidecode
+# Install wget
 
-# Install Version @ 2014.7
+RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
+
+# Install Version @ 2014.7.0rc5
 # See: https://github.com/saltstack/salt-bootstrap/issues/394
 
 ADD https://bootstrap.saltstack.com /usr/local/bin/install_salt.sh
 RUN chmod +x /usr/local/bin/install_salt.sh
 ADD relay.sh /usr/local/bin/relay.sh
 RUN chmod +x /usr/local/bin/relay.sh
-RUN relay.sh install_salt.sh -M -N git v2014.7.0rc5
+RUN relay.sh install_salt.sh -M -N git v2014.7.0rc5 && rm -rf /var/lib/apt/lists/*
 
 # Volumes
 
