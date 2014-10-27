@@ -16,7 +16,7 @@ ADD https://bootstrap.saltstack.com /usr/local/bin/install_salt.sh
 RUN chmod +x /usr/local/bin/install_salt.sh
 ADD relay.sh /usr/local/bin/relay.sh
 RUN chmod +x /usr/local/bin/relay.sh
-RUN relay.sh install_salt.sh -M -N git v2014.7.0rc5 && rm -rf /var/lib/apt/lists/*
+RUN relay.sh install_salt.sh -M -N git v2014.7.0rc6 && rm -rf /var/lib/apt/lists/*
 
 # Volumes
 
