@@ -38,7 +38,7 @@ This will create a stopped container wwith the name of `salt-master-data` and
 will hold our persistant salt master data. Now we just need to run our master
 container with the `--volumes-from` command:
 
-    docker run --rm -it --volume-from salt-master-data soon/salt-master
+    docker run --rm -it --volumes-from salt-master-data soon/salt-master
 
 ### Sharing Local Folders
 
