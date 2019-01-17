@@ -34,7 +34,7 @@ docker image:
 
     docker run -v /etc/salt/pki -v /var/salt/cache -v /var/logs/salt -v /etc/salt/master.d -v /srv/salt --name salt-master-data busybox true
 
-This will create a stopped container wwith the name of `salt-master-data` and
+This will create a stopped container with the name of `salt-master-data` and
 will hold our persistant salt master data. Now we just need to run our master
 container with the `--volumes-from` command:
 
